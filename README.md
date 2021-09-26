@@ -37,3 +37,9 @@ render(
 
 ## Links
 https://github.com/zyqwst/json-schema-editor-vue
+
+## Change
+
+ 1. Use antd4
+ 2. Use lodash to replace underscore
+ 3. Use easy-json-schema to replace generate-schema (the object attribute of array is required by default)

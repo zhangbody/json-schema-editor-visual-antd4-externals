@@ -17,7 +17,7 @@
     "@ant-design/icons": "^4.7.0",
     "antd": "^4",
     "brace": "^0.10.0",
-    "generate-schema": "^2.6.0",
+    "easy-json-schema": "^0.0.2-beta",
     "lodash": "^4.17.21",
     "moox": "^1.0.2",
     "react": "^16.14.0",

@@ -33,7 +33,7 @@ import SchemaJson from './components/SchemaComponents/SchemaJson.js';
 import PropTypes from 'prop-types';
 import { SCHEMA_TYPE, debounce } from './utils.js';
 import handleSchema from './schema';
-const GenerateSchema = require('generate-schema/src/schemas/json.js');
+const ejs = require('easy-json-schema');
 const utils = require('./utils');
 import CustomItem from './components/SchemaComponents/SchemaOther.js';
 import LocalProvider from './components/LocalProvider/index.js';
@@ -75,7 +75,7 @@ class jsonSchema extends React.Component {
         return message.error('json 数据格式有误');
       }
 
-      let jsonData = GenerateSchema(this.jsonData);
+      let jsonData = ejs(this.jsonData);
       this.Model.changeEditorSchemaAction({ value: jsonData });
     } else {
       if (!this.jsonSchemaData) {
