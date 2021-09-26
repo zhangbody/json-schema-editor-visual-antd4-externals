@@ -37,6 +37,7 @@ module.exports = {
     { "react-dom": { commonjs: "react-dom", commonjs2: "react-dom", amd: 'react-dom', root: ['ReactDom'] } },
     { redux: { commonjs: "redux", commonjs2: "redux", amd: 'redux'} },
     { "prop-types": { commonjs: "prop-types", commonjs2: "prop-types",amd: 'prop-types' } },
-    { antd: { commonjs: "antd", commonjs2: "antd", amd: 'antd' } }
+    { antd: { commonjs: "antd", commonjs2: "antd", amd: 'antd' } },
+    { '@ant-design/icons': { commonjs: "@ant-design/icons", commonjs2: "@ant-design/icons", amd: '@ant-design/icons' } }
   ]
 };
