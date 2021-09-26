@@ -13,6 +13,10 @@
     "type": "https",
     "url": "https://github.com/zhangbody/json-schema-editor-visual-antd4-externals.git"
   },
+  "files": [
+    "package",
+    "dist"
+  ],
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "antd": "^4",
