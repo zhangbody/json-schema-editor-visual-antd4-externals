@@ -1,7 +1,7 @@
 import React from 'react';
 import mockEditor from './mockEditor';
 import PropTypes from 'prop-types';
-import _ from 'underscore';
+const isEqual = require('lodash/isEqual');
 
 const ModeMap = {
   javascript: 'ace/mode/javascript',
@@ -15,7 +15,7 @@ function isNotMatch(a, b) {
   try {
     a = JSON.parse(a);
     b = JSON.parse(b);
-    return !_.isEqual(a, b);
+    return !isEqual(a, b);
   } catch (e) {
     return true;
   }

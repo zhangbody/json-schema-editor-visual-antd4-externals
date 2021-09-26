@@ -17,7 +17,7 @@ import {
 } from 'antd';
 const { TextArea } = Input;
 import './schemaJson.css';
-import _ from 'underscore';
+const isUndefined = require('lodash/isUndefined');
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { JSONPATH_JOIN_CHAR, SCHEMA_TYPE } from '../../utils.js';
@@ -34,7 +34,7 @@ class SchemaString extends PureComponent {
   constructor(props, context) {
     super(props);
     this.state = {
-      checked: _.isUndefined(props.data.enum) ? false : true
+      checked: isUndefined(props.data.enum) ? false : true
     };
     this.format = context.Model.__jsonSchemaFormat;
   }
@@ -42,7 +42,7 @@ class SchemaString extends PureComponent {
   componentWillReceiveProps(nextprops) {
     if (this.props.data.enum !== nextprops.data.enum) {
       this.setState({
-        checked: _.isUndefined(nextprops.data.enum) ? false : true
+        checked: isUndefined(nextprops.data.enum) ? false : true
       });
     }
   }
@@ -225,14 +225,14 @@ class SchemaNumber extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      checked: _.isUndefined(props.data.enum) ? false : true,
-      enum: _.isUndefined(props.data.enum) ? '' : props.data.enum.join('\n')
+      checked: isUndefined(props.data.enum) ? false : true,
+      enum: isUndefined(props.data.enum) ? '' : props.data.enum.join('\n')
     };
   }
 
   componentWillReceiveProps(nextprops) {
-    const enumStr = _.isUndefined(this.props.data.enum) ? '' : this.props.data.enum.join('\n');
-    const nextEnumStr = _.isUndefined(nextprops.data.enum) ? '' : nextprops.data.enum.join('\n');
+    const enumStr = isUndefined(this.props.data.enum) ? '' : this.props.data.enum.join('\n');
+    const nextEnumStr = isUndefined(nextprops.data.enum) ? '' : nextprops.data.enum.join('\n');
     if (enumStr !== nextEnumStr) {
       this.setState({ enum: nextEnumStr });
     }
@@ -425,7 +425,7 @@ SchemaNumber.contextTypes = {
 
 const SchemaBoolean = (props, context) => {
   const { data } = props;
-  let value = _.isUndefined(data.default) ? '' : data.default ? 'true' : 'false';
+  let value = isUndefined(data.default) ? '' : data.default ? 'true' : 'false';
   return (
     <div>
       <div className="default-setting">{LocalProvider('base_setting')}</div>

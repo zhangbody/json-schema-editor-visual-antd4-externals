@@ -28,7 +28,6 @@ const TabPane = Tabs.TabPane;
 
 import './index.css';
 import AceEditor from './components/AceEditor/AceEditor.js';
-import _ from 'underscore';
 import { connect } from 'react-redux';
 import SchemaJson from './components/SchemaComponents/SchemaJson.js';
 import PropTypes from 'prop-types';

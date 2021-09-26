@@ -10,7 +10,6 @@ exports.format = [
   { name: 'ipv6' },
   { name: 'uri' }
 ];
-const _ = require('underscore');
 exports.SCHEMA_TYPE = ['string', 'number', 'array', 'object', 'boolean', 'integer'];
 exports.defaultSchema = {
   string: {

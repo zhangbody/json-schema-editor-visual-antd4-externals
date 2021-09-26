@@ -27,7 +27,8 @@ import FieldInput from './FieldInput'
 const Option = Select.Option;
 const { TextArea } = Input;
 import './schemaJson.css';
-import _ from 'underscore';
+const isUndefined = require('lodash/isUndefined');
+const isEqual = require('lodash/isEqual');
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { JSONPATH_JOIN_CHAR, SCHEMA_TYPE } from '../../utils.js';
@@ -130,7 +131,7 @@ class SchemaArray extends PureComponent {
 
     let prefixArrayStr = [].concat(prefixArray, 'properties').join(JSONPATH_JOIN_CHAR);
     let showIcon = this.context.getOpenValue([prefixArrayStr]);
-    return !_.isUndefined(data.items) && (
+    return !isUndefined(data.items) && (
       <div className="array-type">
         <Row className="array-item-type" type="flex" justify="space-around" align="middle">
           <Col
@@ -369,7 +370,7 @@ class SchemaItem extends PureComponent {
                       <Checkbox
                         onChange={this.handleEnableRequire}
                         checked={
-                          _.isUndefined(data.required) ? false : data.required.indexOf(name) != -1
+                          isUndefined(data.required) ? false : data.required.indexOf(name) != -1
                         }
                       />
                     </Tooltip>
@@ -472,9 +473,9 @@ SchemaItem.contextTypes = {
 class SchemaObjectComponent extends Component {
   shouldComponentUpdate(nextProps) {
     if (
-      _.isEqual(nextProps.data, this.props.data) &&
-      _.isEqual(nextProps.prefix, this.props.prefix) &&
-      _.isEqual(nextProps.open, this.props.open)
+      isEqual(nextProps.data, this.props.data) &&
+      isEqual(nextProps.prefix, this.props.prefix) &&
+      isEqual(nextProps.open, this.props.open)
     ) {
       return false;
     }
