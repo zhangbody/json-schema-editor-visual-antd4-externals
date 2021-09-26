@@ -1,6 +1,6 @@
 {
-  "name": "json-schema-editor-visual",
-  "version": "1.1.1",
+  "name": "json-schema-editor-visual-antd4-externals",
+  "version": "2.0.0",
   "description": "jsonschema editor",
   "main": "package/index.js",
   "license": "MIC",
@@ -9,13 +9,21 @@
     "demo": "NODE_ENV=production ykit pack -m",
     "build": "NODE_ENV=production webpack"
   },
+  "repository": {
+    "type": "https",
+    "url": "https://github.com/zhangbody/json-schema-editor-visual-antd4-externals.git"
+  },
   "dependencies": {
-    "antd": "^3.1.6",
+    "@ant-design/icons": "^4.7.0",
+    "antd": "^4",
+    "brace": "^0.10.0",
     "generate-schema": "^2.6.0",
     "moox": "^1.0.2",
-    "react-redux": "^5.0.6",
-    "underscore": "^1.8.3",
-    "brace": "^0.10.0"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-redux": "^7.2.5",
+    "redux": "^4.1.1",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.1",
@@ -32,10 +40,9 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "less": "^2.7.2",
     "less-loader": "^4.1.0",
-    "react-addons-perf": "^15.4.2",
     "style-loader": "^0.20.3",
     "webpack": "^4.5.0",
-    "webpack-cli": "^2.0.14",
-    "ykit-config-antd": "^1.2.0"
+    "webpack-cli": "^3.3.12",
+    "ykit-config-antd": "^2"
   }
 }

@@ -5,7 +5,6 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
 import 'antd/dist/antd.css';
 
 if (process.env.NODE_ENV !== 'production') {
-  window.Perf = require('react-addons-perf');
 }
 //import '../dist/main.css'
 const jeditor = require('../package/index.js');

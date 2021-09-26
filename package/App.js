@@ -1,20 +1,27 @@
 import React from 'react';
+
+import {
+  CaretDownOutlined,
+  CaretRightOutlined,
+  EditOutlined,
+  PlusOutlined,
+  QuestionCircleOutlined,
+  SettingOutlined,
+} from '@ant-design/icons';
+
 import {
   Input,
   Row,
   Tooltip,
   Col,
-  Form,
   Select,
   Checkbox,
   Button,
-  Icon,
   Modal,
   message,
   Tabs,
-  AutoComplete
+  AutoComplete,
 } from 'antd';
-const FormItem = Form.Item;
 const Option = Select.Option;
 const { TextArea } = Input;
 const TabPane = Tabs.TabPane;
@@ -322,7 +329,7 @@ class jsonSchema extends React.Component {
                     rel="noopener noreferrer"
                     href="https://github.com/YMFE/json-schema-editor-visual/issues/38"
                   >
-                    <Icon type="question-circle-o" />
+                    <QuestionCircleOutlined />
                   </a>
                 </Tooltip>
               )}
@@ -378,9 +385,9 @@ class jsonSchema extends React.Component {
                     {schema.type === 'object' ? (
                       <span className="down-style" onClick={this.clickIcon}>
                         {this.state.show ? (
-                          <Icon className="icon-object" type="caret-down" />
+                          <CaretDownOutlined className="icon-object" />
                         ) : (
-                          <Icon className="icon-object" type="caret-right" />
+                          <CaretRightOutlined className="icon-object" />
                         )}
                       </span>
                     ) : null}
@@ -429,12 +436,10 @@ class jsonSchema extends React.Component {
               <Col span={this.props.isMock ? 4 : 5} className="col-item col-item-mock">
                 <Input
                   addonAfter={
-                    <Icon
-                      type="edit"
+                    <EditOutlined
                       onClick={() =>
                         this.showEdit([], 'title', this.props.schema.title)
-                      }
-                    />
+                      } />
                   }
                   placeholder={'Title'}
                   value={this.props.schema.title}
@@ -444,12 +449,10 @@ class jsonSchema extends React.Component {
               <Col span={this.props.isMock ? 4 : 5} className="col-item col-item-desc">
                 <Input
                   addonAfter={
-                    <Icon
-                      type="edit"
+                    <EditOutlined
                       onClick={() =>
                         this.showEdit([], 'description', this.props.schema.description)
-                      }
-                    />
+                      } />
                   }
                   placeholder={'description'}
                   value={schema.description}
@@ -459,13 +462,13 @@ class jsonSchema extends React.Component {
               <Col span={2} className="col-item col-item-setting">
                 <span className="adv-set" onClick={() => this.showAdv([], this.props.schema)}>
                   <Tooltip placement="top" title={LocalProvider('adv_setting')}>
-                    <Icon type="setting" />
+                    <SettingOutlined />
                   </Tooltip>
                 </span>
                 {schema.type === 'object' ? (
                   <span onClick={() => this.addChildField('properties')}>
                     <Tooltip placement="top" title={LocalProvider('add_child_node')}>
-                      <Icon type="plus" className="plus" />
+                      <PlusOutlined className="plus" />
                     </Tooltip>
                   </span>
                 ) : null}
