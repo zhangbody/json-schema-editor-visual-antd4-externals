@@ -1,6 +1,6 @@
 {
   "name": "json-schema-editor-visual-antd4-externals",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "jsonschema editor",
   "main": "package/index.js",
   "license": "MIC",
@@ -21,7 +21,7 @@
     "@ant-design/icons": "^4.7.0",
     "antd": "^4",
     "brace": "^0.10.0",
-    "easy-json-schema": "^0.0.2-beta",
+    "generate-schema": "^2.6.0",
     "lodash": "^4.17.21",
     "moox": "^1.0.2",
     "react": "^16.14.0",

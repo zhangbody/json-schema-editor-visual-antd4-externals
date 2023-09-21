@@ -44,3 +44,4 @@ https://github.com/zyqwst/json-schema-editor-vue
  2. Use lodash to replace underscore
  3. Use easy-json-schema to replace generate-schema (the object attribute of array is required by default)
  4. Remove the style of webkit-scrollbar
+ 5. Switch back to generate-schema, easy-json-schema has format errors when converting array
